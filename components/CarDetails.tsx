@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { CarProps } from '@/types';
 
 interface CarDetailsProps {
@@ -9,7 +7,7 @@ interface CarDetailsProps {
 }
 
 
-const CarDetails = () => {
+const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
   return (
     <div>CarDetails</div>
   )

@@ -51,11 +51,11 @@
 }
 
 .hero__title {
-  @apply 2xl:text-[72px] leading-tight sm:text-[64px] text-[50px] font-extrabold;
+  @apply 2xl:text-[72px] leading-tight sm:text-[64px] text-[50px] font-extrabold text-gray-700;
 }
 
 .hero__subtitle {
-  @apply text-[27px] text-black-100 font-light mt-5;
+  @apply text-[27px] text-gray-500 font-light mt-5 max-w-screen-sm;
 }
 
 .hero__image-container {

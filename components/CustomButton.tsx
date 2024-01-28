@@ -27,4 +27,4 @@ const CustomButton = ({ title, containerStyles, handleClick, btnType, textStyles
   );
 };
 
-export default CustomButton
+export default CustomButton;

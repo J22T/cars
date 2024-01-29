@@ -1,10 +1,10 @@
 "use client";
 
-import { Fragment } from 'react';
-import Image from 'next/image';
-import { Dialog, Transition } from '@headlessui/react';
-import { CarProps } from '@/types';
-import { generateCarImageUrl } from '@/utils';
+import { Fragment } from "react";
+import Image from "next/image";
+import { Dialog, Transition } from "@headlessui/react";
+import { CarProps } from "@/types";
+import { generateCarImageUrl } from "@/utils";
 
 interface CarDetailsProps {
     isOpen: boolean;
@@ -41,7 +41,6 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
             >
-
               <Dialog.Panel className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto transform rounded-2xl bg-white p-6 text-left shadow-xl transition-all flex flex-col gap-6">
                 <button
                   type="button"
@@ -100,7 +99,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
         </Dialog>
       </Transition>
     </>
-  )
-}
+  );
+};
 
 export default CarDetails;

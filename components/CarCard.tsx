@@ -1,24 +1,23 @@
 "use client";
 
-import { useState } from 'react';
-import Image from 'next/image';
+import { useState } from "react";
+import Image from "next/image";
 
-import { CarProps } from '@/types';
-import CustomButton from './CustomButton';
-import { calculateCarRent, generateCarImageUrl } from '@/utils';
-import CarDetails from './CarDetails';
-
+import { calculateCarRent, generateCarImageUrl } from "@/utils";
+import { CarProps } from "@/types";
+import CustomButton from "./CustomButton";
+import CarDetails from "./CarDetails";
 
 interface CarCardProps {
   car: CarProps;
 }
 
 const CarCard = ({ car }: CarCardProps) => {
-const { city_mpg, year, make, model, transmission, drive } = car;
+  const { city_mpg, year, make, model, transmission, drive } = car;
 
-const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-const carRent = calculateCarRent(city_mpg, year);
+  const carRent = calculateCarRent(city_mpg, year);
 
   return (
     <div className="car-card group">
@@ -46,11 +45,11 @@ const carRent = calculateCarRent(city_mpg, year);
                 {transmission === "a" ? "Automatic" : "Manual"}
               </p>
           </div>
-            <div className="flex flex-col justify-center items-center gap-2">
+            <div className="car-card__icon">
                 <Image src="/tire.svg" width={20} height={20} alt="tire" />
                 <p className="text-[14px]">{drive.toUpperCase()} </p>
             </div>
-            <div className="flex flex-col justify-center items-center gap-2">
+            <div className="car-card__icon">
                 <Image src="/gas.svg" width={20} height={20} alt="gas" />
                 <p className="text-[14px]">{city_mpg} MPG </p>
             </div>
@@ -67,7 +66,7 @@ const carRent = calculateCarRent(city_mpg, year);
         </div>
       </div>
 
-      <CarDetails isOpen={isOpen} closeModal={() => setIsOpen(false)} car={car}/>
+      <CarDetails isOpen={isOpen} closeModal={() => setIsOpen(false)} car={car} />
     </div>
   );
 };

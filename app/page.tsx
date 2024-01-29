@@ -1,10 +1,11 @@
-import Image from "next/image";
+// import Image from "next/image";
 
-import { CarCard, CustomFilter, Hero, SearchBar, ShowMore } from "@/components";
 import { fetchCars } from "@/utils";
+import { HomeProps } from "@types";
 import { fuels, manufacturers, yearsOfProduction } from "@/constants";
+import { CarCard, CustomFilter, Hero, SearchBar, ShowMore } from "@/components";
 
-export default async function Home({ searchParams }) {
+export default async function Home({ searchParams }: HomeProps) {
   const allCars = await fetchCars({ 
     manufacturer: searchParams.manufacturer || "",
     year: searchParams.year || 2023,
@@ -22,7 +23,7 @@ export default async function Home({ searchParams }) {
         <div className="mt-12 padding-x padding-y max-width" id="discover">
           <div className="home__text-container">
               <h1 className="text-4xl font-extrabold">Car catalog</h1>
-              <p>Explore our selection</p>
+              <p>Explore our selections</p>
           </div>
 
           <div className="home__filters">
@@ -48,14 +49,14 @@ export default async function Home({ searchParams }) {
               />
 
             </section>
-          ): (
+          ) : (
             <div className="home__error-container">
               <h2 className="text-black text-xl font-bold">No results</h2>
               <p>{allCars?.message}</p>
             </div>
           )}
-
+          
         </div>
     </main>
-  )
+  );
 }
